@@ -24,5 +24,4 @@ pushNotification.register(
 function errorHandler(error) {
     alert('Error: '+ error);
 }
-}
 
