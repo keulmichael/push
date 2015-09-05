@@ -46,12 +46,12 @@ pushNotification.register(
     },
 
     function successHandler(result) {
-    console.log('Success: '+ result);
+    alert('Success: '+ result);
 }
 
 
 function errorHandler(error) {
-    console.log('Error: '+ error);
+    alert('Error: '+ error);
 }
 };
 
