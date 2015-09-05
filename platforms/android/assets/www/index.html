@@ -10,6 +10,35 @@
 	
 <script type="text/javascript" src="PushNotification.js"></script>
 <script type="text/javascript" src="//cdn.pubnub.com/pubnub-3.7.4.min.js"></script>
+<script>
+document.addEventListener('deviceready', onDeviceReady, false);
+
+
+function onDeviceReady (){alert('deviceready');
+
+
+var pushNotification = window.plugins.pushNotification;
+
+pushNotification.register(
+    successHandler, 
+    errorHandler, 
+    {
+      'senderID':'651586884852',
+        'ecb':'onNotificationGCM' // callback function
+    }
+);
+    },
+
+    function successHandler(result) {
+    alert('Success: '+ result);
+}
+
+
+function errorHandler(error) {
+    alert('Error: '+ error);
+}
+
+</script>
     </head>
     <body>
 
