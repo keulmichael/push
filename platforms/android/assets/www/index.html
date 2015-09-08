@@ -40,7 +40,30 @@ function errorHandler(error) {
 }
   
     
-    
+  function onNotificationGCM(e) {
+    switch(e.event){
+        case 'registered':
+            if (e.regid.length > 0){
+                deviceRegistered(e.regid);
+            }
+        break;
+
+        case 'message':
+            if (e.foreground){
+            	// When the app is running foreground. 
+                alert('The room temperature is set too high')
+            }
+        break;
+
+        case 'error':
+            console.log('Error: ' + e.msg);
+        break;
+
+        default:
+          console.log('An unknown event was received');
+          break;
+    }
+}  
     
     
   }
